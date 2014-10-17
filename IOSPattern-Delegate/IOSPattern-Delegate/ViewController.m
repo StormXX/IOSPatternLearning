@@ -16,9 +16,13 @@
 @synthesize startButton,manager;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     manager=[[Manager alloc] init];
     manager.delegate=self;
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    //Button初始化
     startButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     [startButton setFrame:CGRectMake(100, 200, 100, 50)];
     [startButton setBackgroundColor:[UIColor colorWithRed:37.0/255.0f green:192.0/255.0f blue:166.0/255.0f alpha:1.0]];
@@ -30,6 +34,7 @@
 -(void)secretaryWork{
     [manager startWork];
 }
+#pragma ManagerDelegate
 -(void)sendfax{
     NSLog(@"the secretary is sending the fax");
 }
@@ -39,6 +44,7 @@
 -(void)doSomethingStrange{
     NSLog(@"What is Strange things?!");
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
